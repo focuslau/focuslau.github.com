@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Android WIFI调试 | 芦苇丛的鹅蛋</title>
+  <meta name="author" content="Focus Lau">
+  
+  <meta name="description" content="Github Blog">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Android WIFI调试"/>
+  <meta property="og:site_name" content="芦苇丛的鹅蛋"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.png" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="芦苇丛的鹅蛋" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+  
+</head>
+
+
+<body>
+  <div id="container" class="container">
+    <header id="sidebar" role="banner" class="sidebar"><div id="branding" class="branding">
+  <a href="/">
+    <img class="circle" src="/img/koala.png" alt="Anthem">
+  </a>
+  <h1 id="site-title" class="title">
+    <a href="/">芦苇丛的鹅蛋</a>
+  </h1>
+</div>
+<a href="#" id="toggle">信息</a>
+<div class="about" style="display: none">
+  <p>热爱Coding跟Hacking的80末程序猿</p>
+</div>
+<nav class="menu-navigation-container">
+  <ul>
+    
+      <li><a href="/">主页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+  </ul>
+</nav>
+<div class="widget">
+  
+  <nav class="search">
+  <form action="http://google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:flau.me">
+  </form>
+</nav>
+
+  
+
+  
+<nav class="tags">
+  <h3 class="title">标签</h3>
+  <ul>
+  
+    <li><a href="/tags/Android/">Android</a>&nbsp;<small>(2)</small></li>
+  
+    <li><a href="/tags/Android-Porting/">Android Porting</a>&nbsp;<small>(6)</small></li>
+  
+    <li><a href="/tags/LINUX/">LINUX</a>&nbsp;<small>(1)</small></li>
+  
+    <li><a href="/tags/Ubuntu/">Ubuntu</a>&nbsp;<small>(3)</small></li>
+  
+    <li><a href="/tags/git-opration/">git opration</a>&nbsp;<small>(1)</small></li>
+  
+    <li><a href="/tags/nodejs/">node.js</a>&nbsp;<small>(1)</small></li>
+  
+    <li><a href="/tags/vim/">vim</a>&nbsp;<small>(1)</small></li>
+  
+    <li><a href="/tags/web%2Fhtml5/">web/html5</a>&nbsp;<small>(1)</small></li>
+  
+    <li><a href="/tags/开篇/">开篇</a>&nbsp;<small>(1)</small></li>
+  
+    <li><a href="/tags/生活琐碎/">生活琐碎</a>&nbsp;<small>(2)</small></li>
+  
+  </ul>
+</nav>
+
+
+  
+<nav class="tags">
+  <h3 class="title">最新文章</h3>
+  <ul class="entry">
+    
+      <li>
+        <a href="/2013/07/09/android-tools/">android-tools</a>
+      </li>
+    
+      <li>
+        <a href="/2013/07/07/wubi安装的ubuntu如何调整swap大小/">Wubi安装的Ubuntu如何调整SWAP大小</a>
+      </li>
+    
+      <li>
+        <a href="/2013/07/07/nodejs安装/">如何通过包管理器来安装node.js</a>
+      </li>
+    
+      <li>
+        <a href="/2013/06/30/vimide/">一个具有类似于IDE功能的容易安装的VIM</a>
+      </li>
+    
+      <li>
+        <a href="/2013/06/30/node-webkit/">node-webkit</a>
+      </li>
+    
+  </ul>
+</nav>
+
+
+
+  <nav class="tags">
+  <h3 class="title">联系我</h3>
+  <ul class="entry">
+      <li>Gmail--focus.lau@gmail.com</li>
+      <li>QQ--13491729</li>
+  </ul>
+</nav>
+
+
+  <nav class="tags">
+  <h3 class="title">朋友们</h3>
+  <ul class="entry">
+      <li>
+        <a href="http://dzh.me" target="_blank">拉咪--宇宙派来的神秘男人</a>
+      </li>
+      <li>
+        <a href="http://gentlemanmod.github.io" target="_blank">捞仔--小绅士的幻想乡</a>
+      </li>
+  </ul>
+</nav>
+
+
+  <nav class="other">
+  <ul>
+    <li>
+      <a href="http://weibo.com/focuslau" target="_blank">关注我的微博</a>
+    </li>
+  </ul>
+</nav>
+
+
+  <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=1&ptype=1&speed=300&skin=7&isTitle=0&noborder=0&isWeibo=1&isFans=1&uid=2000943045&verifier=5097aa8e&colors=eee,eee,666666,0082cb,ecfbfd&dpc=1"></iframe>
+
+
+  
+<nav class="tags">
+  <h3 class="title">最新回复</h3>
+	<div class="dsq-widget" id="recentcomments">
+		<script src="http://focuslau.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=0&amp;avatar_size=26&amp;excerpt_length=80&amp;hide_mods=0" type="text/javascript">
+		</script>
+	</div>
+</nav>
+
+
+
+</div>
+</header>
+    <section id="content" class="blog">
+      <article class="post">
+  <header>
+    
+  
+    <h1 class="title">Android WIFI调试</h1>
+  
+
+    
+  </header>
+  <section class="entry">
+    
+      <p>这次编译可把我给害惨了。 以为拿着官方的init.qcom.rc文件断然不会错，谁知道就是这个东西坑爹了。。。不过很鄙视官方的做法。难道他们的代码都是写死的？</p>
+<p>话不多说，在此记录一下吧，长点教训：</p>
+<p>首先查看wpa_supplicant.conf文件。关于ctrl_interface这个参数的配置有两种做法：</p>
+<figure class="highlight lang-c"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="title">ctrl_interface</span>=/<span class="typedef"><span class="keyword">data</span>/system/wpa_supplicant/</span>
+
+<span class="title">ctrl_interface</span>=wlan0
+</pre></td></tr></table></figure>
+
+<p>本人推荐用第二种写法，因为方便，libhardware_legacy下的wifi.c文件里也不需要配置IFACE_DIR这个数组了，当然我拿的是CM的源码，当检测到传进来的ifname为wifi.interface这个属性的值的时候，直接返回wlan0，而不会去拼接IFACE_DIR，灵活性大大提高。但也就因为这个问题，导致死活连不上，一直报&quot;unable to find /data/system/wpa_supplicant/wlan0, no such file or directory&quot; 这个错误。。。Google了好久，都说去检查init.rc。那好吧，那就仔细检查检查。。。没发现错误，浪费我一个下午。没办法，只好看WIFI HAL部分的源代码，DEBUG。。。</p>
+<a name="more"></a>
+
+<p>首先是解决WIFI模块加载的问题，直接手动insmod prima_wlan0.ko发现不行。看源码后觉得应该有一个EXT的module，找了下，发现prima下有两个ko文件，一个是cfg80211.ko，一个是prima_wlan0.ko。。。好吧。。。那就先insmod cfg80211.ko，再insmod prima_wlan.ko。。。一切OK，猜想正确。 (其实可以用lsmod这个命令在官方ROM下查看所加载的MODULE)</p>
+<p>然后就是那个&quot;unable to find /data/system/wpa_supplicant/wlan0, no such file or directory&quot;的问题。大致定位到以下代码：</p>
+<figure class="highlight lang-c"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="code"><pre><span class="keyword">int</span> wifi_connect_to_supplicant(const char <span class="variable">*ifname</span>) { char path[<span class="number">256</span>];
+
+<span class="keyword">if</span> (is_primary_interface(ifname)) {
+    <span class="keyword">if</span> (access(IFACE_DIR, F_OK) == <span class="number">0</span>) {
+        snprintf(path, sizeof(path), <span class="string">"<span class="variable">%s</span>/<span class="variable">%s</span>"</span>, IFACE_DIR, primary_iface);
+    } <span class="keyword">else</span> {
+        strlcpy(path, primary_iface, sizeof(path));
+    }
+        <span class="keyword">return</span> wifi_connect_on_socket_path(PRIMARY, path);
+    } <span class="keyword">else</span> {
+        <span class="keyword">sprintf</span>(path, <span class="string">"<span class="variable">%s</span>/<span class="variable">%s</span>"</span>, CONTROL_IFACE_PATH, ifname);
+        <span class="keyword">return</span> wifi_connect_on_socket_path(SECONDARY, path);
+    }
+}
+</pre></td></tr></table></figure>
+
+<p>也就是说在第一个if里判断ctrl_interface为wlan0的时候，会首先去尝试打开IFACE_DIR这个文件夹，如果返回OK，则将这个DIR跟 iface拼接，也就是/data/system/wpa_supplicant/wlan0。难道是这里错了么？LOG一下运行，果然是。用shell去到/data/system/目录下，果然有一个wpa_supplicant文件夹，还是一个软连接。该死，这不就是init.qcom.rc里干的那件事么。。。好吧，先在shell里rm掉这个软连，再修改init.qcom.rc下的如下代码段：</p>
+<p><figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+</pre></td><td class="code"><pre><span class="title">mkdir</span> /<span class="typedef"><span class="keyword">data</span>/system 0775 system system</span>
+# comment it!!!
+# symlink /<span class="typedef"><span class="keyword">data</span>/misc/wifi/wpa_supplicant /<span class="keyword">data</span>/system/wpa_supplicant</span>
+</pre></td></tr></table></figure>
+注释掉最后一行的symlink即可。。。 重启打包内核，用fastboot刷入。。。一切OK！！！哦耶，睡觉吧！</p>
+
+    
+  </section>
+  <footer>
+    
+    <div class="clearfix"></div>
+    
+      <div class="alignleft">
+        
+          <time datetime="2013-05-01T10:43:49.000Z"><a href="/2013/05/01/android-wifi/">2013 5月 1</a></time>
+        
+
+        
+		    
+		    
+  
+  <a href="/tags/Android-Porting/">#Android Porting</a>
+
+		    
+  <div class="addthis addthis_toolbox addthis_default_style">
+    
+    
+    
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    
+    
+    <a class="addthis_counter addthis_pill_style"></a>
+  </div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js"></script>
+
+        
+
+      </div>
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+	
+<section id="comment">
+  <h1 class="title">留言</h1>
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+
+    </section>
+    <footer id="footer" class="clearfix footer"><div class="alignleft">
+  
+  &copy; 2013 Focus Lau
+  
+</div>
+<div class="clearfix"></div></footer>
+  </div>
+  <script src="http://lib.sinaapp.com/js/jquery/1.9.0/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+<script type="text/javascript">
+var disqus_shortname = 'focuslau';
+
+(function(){
+  var dsq = document.createElement('script');
+  dsq.type = 'text/javascript';
+  dsq.async = true;
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+}());
+</script>
+
+
+
+<link rel="stylesheet" type="text/css" href="/fancybox/jquery.fancybox.css">
+<script type="text/javascript" src="/fancybox/jquery.fancybox.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox({
+    prevEffect: 'none',
+    nextEffect: 'none',
+    closeBtn: false,
+    helpers: {
+        title: {type: 'inside'},
+        buttons: {
+            position: 'bottom'
+        }
+    }
+  });
+})(jQuery);
+</script>
+
+</body>
+</html>
