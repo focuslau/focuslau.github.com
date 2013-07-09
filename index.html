@@ -73,7 +73,7 @@
   
     <li><a href="/tags/LINUX/">LINUX</a>&nbsp;<small>(1)</small></li>
   
-    <li><a href="/tags/Ubuntu/">Ubuntu</a>&nbsp;<small>(3)</small></li>
+    <li><a href="/tags/Ubuntu/">Ubuntu</a>&nbsp;<small>(4)</small></li>
   
     <li><a href="/tags/git-opration/">git opration</a>&nbsp;<small>(1)</small></li>
   
@@ -97,6 +97,10 @@
   <ul class="entry">
     
       <li>
+        <a href="/2013/07/09/ubuntu-session/">ubuntu额外的开机启动项设置</a>
+      </li>
+    
+      <li>
         <a href="/2013/07/09/android-tools/">android-tools</a>
       </li>
     
@@ -110,10 +114,6 @@
     
       <li>
         <a href="/2013/06/30/vimide/">一个具有类似于IDE功能的容易安装的VIM</a>
-      </li>
-    
-      <li>
-        <a href="/2013/06/30/node-webkit/">node-webkit</a>
       </li>
     
   </ul>
@@ -170,6 +170,51 @@
 </header>
     <section id="content" class="blog">
       
+  <article class="post">
+  <header>
+    
+  
+    <h1 class="title"><a href="/2013/07/09/ubuntu-session/">ubuntu额外的开机启动项设置</a></h1>
+  
+
+    
+  </header>
+  <section class="entry">
+    
+      <p>Ubuntu下如何添加额外的开机启动项？</p>
+<p>好简单啊，等小捞仔来看～～</p>
+<p>如果是Unity桌面的话，最左上角那个帅气的图标，然后输入session。。。</p>
+<p>接着就会出来一个界面，赶快去创建你的启动项吧～</p>
+
+    
+  </section>
+  <footer>
+    
+    <div class="clearfix"></div>
+    
+      
+      <div class="alignleft">
+        
+        
+          <time datetime="2013-07-09T11:38:50.000Z"><a href="/2013/07/09/ubuntu-session/">2013 7月 9</a></time>
+        
+        
+        
+  
+  <a href="/tags/Ubuntu/">#Ubuntu</a>
+
+      </div>
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+	
+
+
+
+
   <article class="post">
   <header>
     
@@ -661,78 +706,6 @@ E/pppd    ( <span class="number">2207</span>): See README.linux <span class="typ
         
   
   <a href="/tags/Ubuntu/">#Ubuntu</a>
-
-      </div>
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-	
-
-
-
-
-  <article class="post">
-  <header>
-    
-  
-    <h1 class="title"><a href="/2013/05/03/git-operation/">GIT--如何删除一个分支</a></h1>
-  
-
-    
-  </header>
-  <section class="entry">
-    
-      <h3>如何删除一个远程分支？</h3>
-<p>1.首先，需要切换到非本次要删除的分支：假如需要删除的分支为A，则需先切换到另外一个分支B</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="title">git</span> checkout B
-</pre></td></tr></table></figure>
-2.执行删除分支的操作：
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="title">git</span> branch -D 分支名
-</pre></td></tr></table></figure>
-3.提交更改：
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-</pre></td><td class="code"><pre><span class="title">git</span> push origin :分支名
-</pre></td></tr></table></figure>
-记住，分支名前面有个&quot;:&quot;号。
-
-如碰到以下错误的话：
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-</pre></td><td class="code"><pre>remote: error: refusing to <span class="operator"><span class="keyword">delete</span> the <span class="keyword">current</span> branch: refs/heads/cm10<span class="number">.1</span>
-<span class="keyword">To</span> https://github.com/Gaojiquan/android_kernel_zte_N5.git
- ! [remote rejected] cm10<span class="number">.1</span> (deletion <span class="keyword">of</span> the <span class="keyword">current</span> branch prohibited)
-error: failed <span class="keyword">to</span> push <span class="keyword">some</span> refs <span class="keyword">to</span> <span class="string">'https://github.com/Gaojiquan/android_kernel_zte_N5.git'</span>
-</pre></td></tr></table></figure>
-
-<p>请到项目主页的Settings页里把默认的branch改成其它的，比如master，再执行上述操作即可。</p>
-
-    
-  </section>
-  <footer>
-    
-    <div class="clearfix"></div>
-    
-      
-        <div class="alignleft">
-          <a href="/2013/05/03/git-operation/#more" class="more-link">阅读全文</a>&nbsp;
-        </div>
-      
-      <div class="alignleft">
-        
-        
-          <time datetime="2013-05-02T20:00:07.000Z"><a href="/2013/05/03/git-operation/">2013 5月 3</a></time>
-        
-        
-        
-  
-  <a href="/tags/git-opration/">#git opration</a>
 
       </div>
     
