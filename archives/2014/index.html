@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>CM10.1 For N881F LOGS | 芦苇丛的鹅蛋</title>
+  <title>归档：2014 | 芦苇丛的鹅蛋</title>
   <meta name="author" content="Focus Lau">
   
   <meta name="description" content="Github Blog">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="CM10.1 For N881F LOGS"/>
+  
   <meta property="og:site_name" content="芦苇丛的鹅蛋"/>
 
   
@@ -169,19 +169,26 @@
 </div>
 </header>
     <section id="content" class="blog">
-      <article class="post">
+      
+<h2 class="archive-title">2014</h2>
+
+
+  
+    <article class="post">
   <header>
     
   
-    <h1 class="title">CM10.1 For N881F LOGS</h1>
+    <h1 class="title"><a href="/2014/01/01/在android编译时建立符号链接/">在Android编译时建立符号链接</a></h1>
   
 
     
   </header>
   <section class="entry">
     
-      <p>调试日志</p>
-<figure class="highlight lang-shell"><table><tr><td class="gutter"><pre>1
+      <p>在编译系统的时候想生成符号链接，不用再搞个开机启动服务什么的去维护了，手动往 updater-script 加符号链是不是好傻。。。现在我们可以参考　ALL_DEFAULT_INSTALLED_MODULES　这个玩意了(我发现的太晚了)。</p>
+<p>其实我也是偶然看见的，以前也只是有这个想法，但都是通过服务去搞定的 :D</p>
+<p>废话不多说，直接上例子吧 :)</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
 2
 3
 4
@@ -209,65 +216,71 @@
 26
 27
 28
+29
+30
+31
+32
+33
+34
 </pre></td><td class="code"><pre>
-W/SurfaceFlinger( <span class="number">2875</span>): Timed out waiting <span class="keyword">for</span> hw vsync; faking it
-W/Adreno200-EGL( <span class="number">2875</span>): <span class="xml"><span class="tag">&lt;<span class="title">qeglDrvAPI_eglCreateImageKHR:4510</span>&gt;</span>: EGL_BAD_PARAMETER
-E/SurfaceTexture( 2875): [BootAnimation] error creating EGLImage: 0x300c
-E/SurfaceTexture( 2875): [BootAnimation] updateTexImage: acquire failed: Unknown error -2147483648 (-2147483648)
-W/Adreno200-EGL( 2875): <span class="tag">&lt;<span class="title">qeglDrvAPI_eglCreateImageKHR:4510</span>&gt;</span>: EGL_BAD_PARAMETER
-E/SurfaceTexture( 2875): [BootAnimation] error creating EGLImage: 0x300c
-E/SurfaceTexture( 2875): [BootAnimation] updateTexImage: acquire failed: Unknown error -2147483648 (-2147483648)
-W/GraphicBufferAllocator( 2875): WOW! gralloc alloc failed, waiting for pending frees!
-W/GraphicBufferAllocator( 2875): alloc(540, 960, 2, 00001a03, ...) failed -12 (Out of memory)
-D/GraphicBufferAllocator( 2875): Allocated buffers:
-D/GraphicBufferAllocator( 2875):  0x1a90688: 2025.00 KiB |  540 ( 540) x  960 |        2 | 0x00001a03
-D/GraphicBufferAllocator( 2875):  0x1a92820: 2025.00 KiB |  540 ( 540) x  960 |        2 | 0x00001a03
-D/GraphicBufferAllocator( 2875):  0x1a98a98: 2025.00 KiB |  540 ( 540) x  960 |        2 | 0x00000b03
-D/GraphicBufferAllocator( 2875):  0x1a98b70: 2025.00 KiB |  540 ( 540) x  960 |        2 | 0x00000b03
-D/GraphicBufferAllocator( 2875):  0x1a98c48: 2025.00 KiB |  540 ( 540) x  960 |        2 | 0x00000b03
-D/GraphicBufferAllocator( 2875):  0x1a993f0: 2025.00 KiB |  540 ( 540) x  960 |        2 | 0x00000b03
-D/GraphicBufferAllocator( 2875):  0x1a9b300: 2025.00 KiB |  540 ( 540) x  960 |        2 | 0x00000b03
-D/GraphicBufferAllocator( 2875):  0x1a9b3b0: 2025.00 KiB |  540 ( 540) x  960 |        2 | 0x00000b03
-D/GraphicBufferAllocator( 2875): Total allocated (estimate): 16200.00 KB
-E/SurfaceFlinger( 2875): GraphicBufferAlloc::createGraphicBuffer(w=540, h=960) failed (Out of memory), handle=0x0
-E/BufferQueue( 2875): [FramebufferSurface] dequeueBuffer: SurfaceComposer::createGraphicBuffer failed
-W/Adreno200-EGLSUB( 2875): <span class="tag">&lt;<span class="title">DequeueBuffer:420</span>&gt;</span>: dequeue native buffer fail: Out of memory
-W/Adreno200-EGL( 2875): <span class="tag">&lt;<span class="title">eglSurfaceResize:3570</span>&gt;</span>: EGL_BAD_ALLOC
-F/SurfaceFlinger( 2875): eglSwapBuffers(0x1, 0x1a92918) failed with 0x00003003
-F/libc    ( 2875): Fatal signal 11 (SIGSEGV) at 0xdeadbaad (code=1), thread 2877 (SurfaceFlinger)
+<span class="comment"># Create firmware links</span>
+FIRMWARE_MDM_IMAGES := \
+    acdb.mbn \
+    apps.mbn \
+    dsp1.mbn dsp2.mbn \
+    efs1.mbn efs2.mbn efs3.mbn \
+    htccdma.mbn htcnvmfg.mbn htccnv.mbn htcuserd.mbn htcrfnv.mbn htcssmem.mbn \
+    mdm_acdb.img \
+    rpm.mbn \
+    sbl1.mbn \
+    sbl2.mbn
 
-</span>
+FIRMWARE_MDM_SYMLINKS := <span class="variable">$(</span>addprefix <span class="variable">$(</span>TARGET_OUT_VENDOR)/firmware/,<span class="variable">$(</span>notdir <span class="variable">$(</span>FIRMWARE_MDM_IMAGES)))
+<span class="variable">$(</span>FIRMWARE_MDM_SYMLINKS): <span class="variable">$(</span>LOCAL_INSTALLED_MODULE)
+	<span class="variable">@echo</span> <span class="string">"MDM Firmware link: <span class="variable">$@</span>"</span>
+	<span class="variable">@mkdir</span> -p <span class="variable">$(</span>dir <span class="variable">$@</span>)
+	<span class="variable">@rm</span> -rf <span class="variable">$@</span>
+	<span class="variable">$(</span>hide) ln -sf /firmware/mdm/image/<span class="variable">$(</span>notdir <span class="variable">$@</span>) <span class="variable">$@</span>
+
+ALL_DEFAULT_INSTALLED_MODULES += <span class="variable">$(</span>FIRMWARE_MDM_SYMLINKS)
+
+FIRMWARE_Q6_IMAGES := \
+    q6.b0<span class="number">0</span> q6.b01 q6.b03 q6.b04 q6.b05 q6.b06 q6.mdt
+
+FIRMWARE_Q6_SYMLINKS := <span class="variable">$(</span>addprefix <span class="variable">$(</span>TARGET_OUT_VENDOR)/firmware/,<span class="variable">$(</span>notdir <span class="variable">$(</span>FIRMWARE_Q6_IMAGES)))
+<span class="variable">$(</span>FIRMWARE_Q6_SYMLINKS): <span class="variable">$(</span>LOCAL_INSTALLED_MODULE)
+	<span class="variable">@echo</span> <span class="string">"Q6 Firmware link: <span class="variable">$@</span>"</span>
+	<span class="variable">@mkdir</span> -p <span class="variable">$(</span>dir <span class="variable">$@</span>)
+	<span class="variable">@rm</span> -rf <span class="variable">$@</span>
+	<span class="variable">$(</span>hide) ln -sf /firmware/q6/<span class="variable">$(</span>notdir <span class="variable">$@</span>) <span class="variable">$@</span>
+
+ALL_DEFAULT_INSTALLED_MODULES += <span class="variable">$(</span>FIRMWARE_Q6_SYMLINKS)
+
 </pre></td></tr></table></figure>
+
+
+<p>把这段放到你的mk里就行啦。方便～
+
     
   </section>
   <footer>
     
     <div class="clearfix"></div>
     
+      
+        <div class="alignleft">
+          <a href="/2014/01/01/在android编译时建立符号链接/#more" class="more-link">阅读全文</a>&nbsp;
+        </div>
+      
       <div class="alignleft">
         
-          <time datetime="2013-04-29T17:31:33.000Z"><a href="/2013/04/30/cm10.1-for-n881f-logs/">2013 4月 30</a></time>
         
-
+          <time datetime="2014-01-01T10:05:51.000Z"><a href="/2014/01/01/在android编译时建立符号链接/">2014 1月 1</a></time>
         
-		    
-		    
+        
+        
   
-  <a href="/tags/Android-Porting/">#Android Porting</a>
-
-		    
-  <div class="addthis addthis_toolbox addthis_default_style">
-    
-    
-    
-      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-    
-    
-    <a class="addthis_counter addthis_pill_style"></a>
-  </div>
-  <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js"></script>
-
-        
+  <a href="/tags/Android/">#Android</a>
 
       </div>
     
@@ -277,15 +290,12 @@ F/libc    ( 2875): Fatal signal 11 (SIGSEGV) at 0xdeadbaad (code=1), thread 2877
 
 
 	
-<section id="comment">
-  <h1 class="title">留言</h1>
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
 
 
 
+  
+
+  
 
     </section>
     <footer id="footer" class="clearfix footer"><div class="alignleft">
@@ -307,7 +317,7 @@ var disqus_shortname = 'focuslau';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>
