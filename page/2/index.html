@@ -97,6 +97,10 @@
   <ul class="entry">
     
       <li>
+        <a href="/2014/01/01/cm11-multisim/">CM11-MultiSim</a>
+      </li>
+    
+      <li>
         <a href="/2014/01/01/在android编译时建立符号链接/">在Android编译时建立符号链接</a>
       </li>
     
@@ -110,10 +114,6 @@
     
       <li>
         <a href="/2013/07/09/android-tools/">android-tools</a>
-      </li>
-    
-      <li>
-        <a href="/2013/07/07/wubi安装的ubuntu如何调整swap大小/">Wubi安装的Ubuntu如何调整SWAP大小</a>
       </li>
     
   </ul>
@@ -170,6 +170,69 @@
 </header>
     <section id="content" class="blog">
       
+  <article class="post">
+  <header>
+    
+  
+    <h1 class="title"><a href="/2013/06/02/pppd拨号上网/">pppd拨号上网</a></h1>
+  
+
+    
+  </header>
+  <section class="entry">
+    
+      <h1>android pppd拨号上网</h1>
+<p>在给一台机器实现pppd拨号上网的时候碰到如下异常：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+</pre></td><td class="code"><pre>E/pppd    ( <span class="number">2207</span>): This system lacks kernel support <span class="keyword">for</span> PPP.  This could be because
+E/pppd    ( <span class="number">2207</span>): <span class="keyword">the</span> PPP kernel module could <span class="keyword">not</span> be loaded, <span class="keyword">or</span> because PPP was <span class="keyword">not</span>
+E/pppd    ( <span class="number">2207</span>): included <span class="keyword">in</span> <span class="keyword">the</span> kernel configuration.  If PPP was included <span class="keyword">as</span> a
+E/pppd    ( <span class="number">2207</span>): module, <span class="keyword">try</span> `/sbin/modprobe -v ppp'.  If <span class="keyword">that</span> fails, check <span class="keyword">that</span>
+E/pppd    ( <span class="number">2207</span>): ppp.o exists <span class="keyword">in</span> /lib/modules/`uname -r`/net.
+E/pppd    ( <span class="number">2207</span>): See README.linux <span class="type">file</span> <span class="keyword">in</span> <span class="keyword">the</span> ppp distribution <span class="keyword">for</span> more details.
+</pre></td></tr></table></figure>
+<hr/>
+看了下官包的bin目录，感觉它应该是pppd+chat(好古老！)的形式。
+
+
+    
+  </section>
+  <footer>
+    
+    <div class="clearfix"></div>
+    
+      
+        <div class="alignleft">
+          <a href="/2013/06/02/pppd拨号上网/#more" class="more-link">阅读全文</a>&nbsp;
+        </div>
+      
+      <div class="alignleft">
+        
+        
+          <time datetime="2013-06-02T13:52:03.000Z"><a href="/2013/06/02/pppd拨号上网/">2013 6月 2</a></time>
+        
+        
+        
+  
+  <a href="/tags/Android-Porting/">#Android Porting</a>
+
+      </div>
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+	
+
+
+
+
   <article class="post">
   <header>
     
@@ -712,60 +775,14 @@ sudo apt-<span class="keyword">get</span> install retext
 
 
 
-  <article class="post">
-  <header>
-    
-  
-    <h1 class="title"><a href="/2013/04/26/hello-world/">开篇</a></h1>
-  
-
-    
-  </header>
-  <section class="entry">
-    
-      <p>2012年04月27日
-头一回玩付费BLOG，呵呵，非常感谢拉咪的帮助及提供的顶级域名～大侠辛苦了，向大侠致敬！！！
-Thanks very much!!!</p>
-
-    
-  </section>
-  <footer>
-    
-    <div class="clearfix"></div>
-    
-      
-        <div class="alignleft">
-          <a href="/2013/04/26/hello-world/#more" class="more-link">阅读全文</a>&nbsp;
-        </div>
-      
-      <div class="alignleft">
-        
-        
-          <time datetime="2013-04-26T12:34:18.000Z"><a href="/2013/04/26/hello-world/">2013 4月 26</a></time>
-        
-        
-        
-  
-  <a href="/tags/开篇/">#开篇</a>
-
-      </div>
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-	
-
-
-
-
 
 
 <nav id="pagination">
   
     <a href="/" class="alignleft prev">上一页</a>
   
+  
+    <a href="/page/3/" class="alignright next">下一页</a>
   
   <div class="clearfix"></div>
 </nav>
