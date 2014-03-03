@@ -67,7 +67,7 @@
   <h3 class="title">标签</h3>
   <ul>
   
-    <li><a href="/tags/Android/">Android</a>&nbsp;<small>(4)</small></li>
+    <li><a href="/tags/Android/">Android</a>&nbsp;<small>(5)</small></li>
   
     <li><a href="/tags/Android-Porting/">Android Porting</a>&nbsp;<small>(6)</small></li>
   
@@ -97,6 +97,10 @@
   <ul class="entry">
     
       <li>
+        <a href="/2014/03/03/cm11-dual-sim/">CM11 dual sim</a>
+      </li>
+    
+      <li>
         <a href="/2014/01/01/cm11-multisim/">CM11-MultiSim</a>
       </li>
     
@@ -110,10 +114,6 @@
     
       <li>
         <a href="/2013/07/09/ubuntu-session/">ubuntu额外的开机启动项设置</a>
-      </li>
-    
-      <li>
-        <a href="/2013/07/09/android-tools/">android-tools</a>
       </li>
     
   </ul>
@@ -171,6 +171,81 @@
     <section id="content" class="blog">
       
 <h2 class="archive-title">归档</h2>
+
+
+  
+    <article class="post">
+  <header>
+    
+  
+    <h1 class="title"><a href="/2014/03/03/cm11-dual-sim/">CM11 dual sim</a></h1>
+  
+
+    
+  </header>
+  <section class="entry">
+    
+      <p>CM11的MultiSIM代码终于合进去了，自己之前合了一部分，感觉工作量很大。</p>
+<p>这里讲一下怎么配置成多卡的机型。</p>
+<p>从Settings出发，settings_header.xml中有一段多卡的设置：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre>
+    <span class="comment">&lt;!-- Multi Sim Settings - this is in the settings process --&gt;</span>
+    <span class="tag">&lt;<span class="title">header
+</span>        <span class="attribute">android:id</span>=<span class="value">"@+id/multi_sim_settings"</span>
+        <span class="attribute">android:icon</span>=<span class="value">"@drawable/ic_settings_sim"</span>
+        <span class="attribute">android:title</span>=<span class="value">"@string/multi_sim_settings_title"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">intent
+</span>            <span class="attribute">android:action</span>=<span class="value">"android.intent.action.MAIN"</span>
+            <span class="attribute">android:targetPackage</span>=<span class="value">"com.android.settings"</span>
+            <span class="attribute">android:targetClass</span>=<span class="value">"com.android.settings.MultiSimSettings"</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">header</span>&gt;</span>
+
+</pre></td></tr></table></figure>
+
+
+
+    
+  </section>
+  <footer>
+    
+    <div class="clearfix"></div>
+    
+      
+        <div class="alignleft">
+          <a href="/2014/03/03/cm11-dual-sim/#more" class="more-link">阅读全文</a>&nbsp;
+        </div>
+      
+      <div class="alignleft">
+        
+        
+          <time datetime="2014-03-03T15:28:52.000Z"><a href="/2014/03/03/cm11-dual-sim/">2014 3月 3</a></time>
+        
+        
+        
+  
+  <a href="/tags/Android/">#Android</a>
+
+      </div>
+    
+    <div class="clearfix"></div>
+  </footer>
+</article>
+
+
+	
+
 
 
   
@@ -702,78 +777,6 @@ sudo apt-<span class="keyword">get</span> install nodejs
         
   
   <a href="/tags/web%2Fhtml5/">#web/html5</a>
-
-      </div>
-    
-    <div class="clearfix"></div>
-  </footer>
-</article>
-
-
-	
-
-
-
-  
-    <article class="post">
-  <header>
-    
-  
-    <h1 class="title"><a href="/2013/06/02/camera-hal-hack/">Camera HAL Hack</a></h1>
-  
-
-    
-  </header>
-  <section class="entry">
-    
-      <h2>前阵子修改了下相机的HAL程序，其实谈不上修改。</h2>
-<p>系统版本: Android 4.2.2</p>
-<p>使用平台: Tegra 3 四核</p>
-<p>问题描述: 使用原厂的Camera HAL用自带相机无法预览图像，但条形码正常，闪光灯正常。</p>
-<p><hr/>
-从logcat上看到个重要的信息：startFaceDetection(人脸识别)的时候出错了，导致相机crash。
-跟踪源码到frameworks/base/core/java/android/hardware/camera.java:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9
-</pre></td><td class="code"><pre>    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> startFaceDetection() {
-        <span class="keyword">if</span> (mFaceDetectionRunning) {
-            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"Face detection is already running"</span>);
-        }
-        _startFaceDetection(CAMERA_FACE_DETECTION_HW);<span class="comment">//　这是个native的方法！</span>
-        mFaceDetectionRunning = <span class="keyword">true</span>;
-    }
-    
-<span class="keyword">private</span> <span class="keyword">native</span> <span class="keyword">final</span> <span class="keyword">void</span> _startFaceDetection(<span class="keyword">int</span> type);
-</pre></td></tr></table></figure>
-
-<p>
-    
-  </section>
-  <footer>
-    
-    <div class="clearfix"></div>
-    
-      
-        <div class="alignleft">
-          <a href="/2013/06/02/camera-hal-hack/#more" class="more-link">阅读全文</a>&nbsp;
-        </div>
-      
-      <div class="alignleft">
-        
-        
-          <time datetime="2013-06-02T14:46:46.000Z"><a href="/2013/06/02/camera-hal-hack/">2013 6月 2</a></time>
-        
-        
-        
-  
-  <a href="/tags/Android-Porting/">#Android Porting</a>
 
       </div>
     

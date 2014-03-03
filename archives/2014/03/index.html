@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>ubuntu额外的开机启动项设置 | 芦苇丛的鹅蛋</title>
+  <title>归档：2014/3 | 芦苇丛的鹅蛋</title>
   <meta name="author" content="Focus Lau">
   
   <meta name="description" content="Github Blog">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="ubuntu额外的开机启动项设置"/>
+  
   <meta property="og:site_name" content="芦苇丛的鹅蛋"/>
 
   
@@ -169,21 +169,52 @@
 </div>
 </header>
     <section id="content" class="blog">
-      <article class="post">
+      
+<h2 class="archive-title">2014/3</h2>
+
+
+  
+    <article class="post">
   <header>
     
   
-    <h1 class="title">ubuntu额外的开机启动项设置</h1>
+    <h1 class="title"><a href="/2014/03/03/cm11-dual-sim/">CM11 dual sim</a></h1>
   
 
     
   </header>
   <section class="entry">
     
-      <p>Ubuntu下如何添加额外的开机启动项？</p>
-<p>好简单啊，等小捞仔来看～～</p>
-<p>如果是Unity桌面的话，最左上角那个帅气的图标，然后输入session。。。</p>
-<p>接着就会出来一个界面，赶快去创建你的启动项吧～</p>
+      <p>CM11的MultiSIM代码终于合进去了，自己之前合了一部分，感觉工作量很大。</p>
+<p>这里讲一下怎么配置成多卡的机型。</p>
+<p>从Settings出发，settings_header.xml中有一段多卡的设置：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+</pre></td><td class="code"><pre>
+    <span class="comment">&lt;!-- Multi Sim Settings - this is in the settings process --&gt;</span>
+    <span class="tag">&lt;<span class="title">header
+</span>        <span class="attribute">android:id</span>=<span class="value">"@+id/multi_sim_settings"</span>
+        <span class="attribute">android:icon</span>=<span class="value">"@drawable/ic_settings_sim"</span>
+        <span class="attribute">android:title</span>=<span class="value">"@string/multi_sim_settings_title"</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">intent
+</span>            <span class="attribute">android:action</span>=<span class="value">"android.intent.action.MAIN"</span>
+            <span class="attribute">android:targetPackage</span>=<span class="value">"com.android.settings"</span>
+            <span class="attribute">android:targetClass</span>=<span class="value">"com.android.settings.MultiSimSettings"</span> /&gt;</span>
+    <span class="tag">&lt;/<span class="title">header</span>&gt;</span>
+
+</pre></td></tr></table></figure>
+
+
 
     
   </section>
@@ -191,30 +222,20 @@
     
     <div class="clearfix"></div>
     
+      
+        <div class="alignleft">
+          <a href="/2014/03/03/cm11-dual-sim/#more" class="more-link">阅读全文</a>&nbsp;
+        </div>
+      
       <div class="alignleft">
         
-          <time datetime="2013-07-09T11:38:50.000Z"><a href="/2013/07/09/ubuntu-session/">2013 7月 9</a></time>
         
-
+          <time datetime="2014-03-03T15:28:52.000Z"><a href="/2014/03/03/cm11-dual-sim/">2014 3月 3</a></time>
         
-		    
-		    
+        
+        
   
-  <a href="/tags/Ubuntu/">#Ubuntu</a>
-
-		    
-  <div class="addthis addthis_toolbox addthis_default_style">
-    
-    
-    
-      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-    
-    
-    <a class="addthis_counter addthis_pill_style"></a>
-  </div>
-  <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js"></script>
-
-        
+  <a href="/tags/Android/">#Android</a>
 
       </div>
     
@@ -224,15 +245,12 @@
 
 
 	
-<section id="comment">
-  <h1 class="title">留言</h1>
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
 
 
 
+  
+
+  
 
     </section>
     <footer id="footer" class="clearfix footer"><div class="alignleft">
@@ -254,7 +272,7 @@ var disqus_shortname = 'focuslau';
   var dsq = document.createElement('script');
   dsq.type = 'text/javascript';
   dsq.async = true;
-  dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+  dsq.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
   (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
 }());
 </script>
